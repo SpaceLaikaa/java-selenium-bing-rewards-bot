@@ -18,9 +18,40 @@ public class bingAutomation {
     private final String EDGE_DRIVER_PATH = "C:\\Users\\ardaa\\Desktop\\inteli_framworks\\msedgedriver\\msedgedriver.exe";
 
     private final String[] SEARCH_TERMS = {
-            "Meshuggah 'Immutable' review", "Java for web scraping tutorial",
-            "Izmir University of Economics software", "Internship opportunities after SAT",
-            "Long-distance girlfriend gift"
+            //part 1
+            "Java Spring Boot vs Django performance", "Python vs Java for backend",
+            "Izmir University of Economics Software Master's Degree", "Software Engineering internship opportunities 2026",
+            "What is a RESTful API in Java", "Design Patterns in Java Singleton",
+            "Excel VBA automation with Python", "HTML CSS Grid vs Flexbox",
+            "Java Garbage Collection explained", "Big O Notation algorithms",
+            "Clean Code principles Martin Fowler", "How to use Selenium with TestNG",
+            "Modern web scraping techniques Python", "Docker containers for Java applications",
+            "Difference between list and tuple Python",
+            "best practices for git commit messages",
+            "Java multithreading tutorial", "Cloud computing services comparison AWS Azure",
+            //part2
+            "Meshuggah 'Immutable' album review", "Meshuggah best guitar riffs",
+            "Meshuggah 8-string tuning setup", "Fredrik Thordendal gear setup",
+            "Extreme Progressive Metal bands 2025", "Best metal drummers of all time",
+            "How to read electric guitar tabs", "Guitar distortion pedal review 2025",
+            "Polyrhythms in metal music explained", "Jazz fusion guitarists",
+            "DIY custom electric guitar wiring", "Why Meshuggah uses 8 string guitars",
+            "best plugins for metal guitar mixing", "Fractal Audio Axe-Fx III presets",
+            "top 10 instrumental progressive metal songs", "Polyphia guitar techniques",
+            "electric guitar scales chart",
+            //part 3
+            "current US dollar to TL exchange rate", "best new sci-fi movies 2025",
+            "Super Lig match highlights last week", "2026 world cup qualifiers Turkey matches",
+            "best coffee brewing methods", "new android phones comparison",
+            "latest artificial intelligence news", "what is the date today 2025",
+            "what to do on New Year's Eve Turkey", "Netflix top 10 series in Turkey",
+            "When is the first manned mission to Mars", "Space tourism prices",
+            "easy homemade pizza recipe", "weekly horoscope scorpio",
+            "technology stocks Borsa Istanbul", "e-commerce trends 2025",
+            "best online course platforms", "most popular esports games in Turkey",
+            "which professions are affected by artificial intelligence", "when does the winter tire mandate end",
+            "short and effective motivational quotes",
+            "cheapest flight ticket Izmir Kocaeli"
     };
 
     @BeforeMethod(onlyForGroups = {"desktop"})
