@@ -1,4 +1,3 @@
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +10,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class bingAutomation {
 
@@ -67,14 +67,15 @@ public class bingAutomation {
         System.setProperty("webdriver.edge.driver", EDGE_DRIVER_PATH);
         EdgeOptions options = new EdgeOptions();
 
-        Map<String, Object> mobileEmulation = new HashMap<>();
-        mobileEmulation.put("deviceName", "iPhone X");
 
-        options.setExperimentalOption("mobileEmulation", mobileEmulation);
+        String mobileUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1";
+        options.addArguments("--user-agent=" + mobileUserAgent);
+
+        options.addArguments("--window-size=375,667");
 
         driver = new EdgeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        System.out.println("Mobile emulation started (Edge).");
+        System.out.println("Mobil User-Agent forced (Edge).");
     }
 
     @Test(groups = {"desktop"})
@@ -82,13 +83,10 @@ public class bingAutomation {
         performSearches(20, "Desktop");
     }
 
-    @Test(groups = {"mobile"})
-    public void performMobileSearches() throws InterruptedException {
-        performSearches(15, "Mobile");
-    }
 
     private void performSearches(int searchCount, String type) throws InterruptedException {
         Random random = new Random();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
 
         for (int i = 0; i < searchCount; i++) {
             String query = SEARCH_TERMS[random.nextInt(SEARCH_TERMS.length)];
@@ -99,6 +97,10 @@ public class bingAutomation {
             WebElement searchBox = driver.findElement(By.name("q"));
             searchBox.sendKeys(query);
             searchBox.submit();
+
+            Thread.sleep(1000);
+            js.executeScript("window.scrollBy(0, Math.random() * 800 + 400)"); // Rastgele kaydırma
+            Thread.sleep(1000);
 
             int delay = random.nextInt(6000) + 1500;
             Thread.sleep(delay);
