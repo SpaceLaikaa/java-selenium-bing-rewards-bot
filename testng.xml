@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="BingAutomationSuite" verbose="1">
+    <test name="BingDesktopAndMobileSearches">
+        <groups>
+            <run>
+                <include name="desktop" />
+                <include name="mobile" />
+            </run>
+        </groups>
+        <classes>
+            <class name="bingAutomation" />
+        </classes>
+    </test> 
+</suite>
