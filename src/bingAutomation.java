@@ -75,7 +75,15 @@ public class bingAutomation {
         EdgeOptions options = new EdgeOptions();
         options.setExperimentalOption("mobileEmulation", mobileEmulation);
         options.addArguments("--disable-blink-features=AutomationControlled");
-
+        
+        //for better stability / anti bot detection
+        options.addArguments("--disable-infobars");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--remote-allow-origins=*");
+        options.setCapability("acceptInsecureCerts", true);
+        options.addArguments("--disable-blink-features=AutomationControlled");
 
 
         driver = new EdgeDriver(options);
